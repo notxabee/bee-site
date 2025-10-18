@@ -3,56 +3,117 @@
         <head>
             <title>bee</title>
             <style>
-            body {background-color: rgb(0, 0, 0);}
+            body { 
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://static.wikia.nocookie.net/adofai/images/2/2f/Final_Hope_Lofi_Bg.png/revision/latest?cb=20200726235959');
+                background-size:cover;
+                background-position: center center;
+                margin: 0;
+                height: 100vh;
+                }
             h1 {color:white;
-                font-family: 'Courier New', Courier, monospace;
+               font-family:Verdana, Geneva, Tahoma, sans-serif;
                 text-align:center;
-                border:2px solid white;
-                border-radius:10px;
                 width: 260px;
                 margin: 0 auto;}
             h2 {color:white;
-                font-family: 'Courier New', Courier, monospace;
+               font-family:Verdana, Geneva, Tahoma, sans-serif;
                 text-align:center;
-                border:2px solid white;
-                border-radius:10px;
                 width: 280px;
                 margin: 0 auto;}
             p {color:white;
-                font-family: 'Courier New', Courier, monospace;
+               font-family:Verdana, Geneva, Tahoma, sans-serif;
                 text-align:center;}
-            .flex-container {
+            .socialscontainer {
                 display: flex;
                 gap: 15px;
-                border: 2px solid #ccc;
-                border-radius:20px;
                 padding: 10px;
                 width: 300px;
                 height: 80px;
                 margin: 0 auto;
                 align-items: center;}
-            .item {
+            .social {
                 padding: 10px;
                 text-align: center;
-                flex: 1;}
-
+                flex: 1;
+                transition:transform;
+                transition-duration: 0.2s;
+            }
+            .social:hover {
+                transform: translateY(-5px)
+            }
+            .topnav {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                display: flex;
+                background-color: #333;
+                align-items: center;
+                overflow: hidden;
+                width:350px;
+                margin: 0 auto;
+                border-radius: 10px;
+            }
+            .topnav button {
+                flex:1;
+                color: #ffffff;
+                background: #000008;
+                background: linear-gradient(180deg,rgba(0, 0, 8, 1) 0%, rgba(0, 19, 71, 1) 100%);
+                text-align: center;
+                padding: 20px;
+                text-decoration: none;
+                font-size: 20px;
+                border:none;
+                border-bottom: solid white;
+                transition-duration: 0.2s;
+                }
+            .topnav button:hover {
+                background-image: none;
+                background-color: #ffffff;
+                color: black;
+                }
             </style>
         </head>
         <body>
-        <br>
+        <div class="topnav">
+        <button onClick="showPage('home')">Home</button>
+        <button onClick="showPage('about')">About</button>
+        <button onClick="showPage('mystuff')">My Stuff</button>
+        </div> 
+        <br><br>
+        <div id="home" style=display:block;>
         <h1>hi, i'm bee</h1>
         <br>
         <p>i like bees</p>
         <p>bees are cool</p>
         <center><img src="https://media.discordapp.net/attachments/296802696243970049/1137176345785401446/wibble.gif?ex=68f38440&is=68f232c0&hm=8765a897e7216328bf98bfd3930f6acdd2e146e01898610d51ae3761cfa5517b&=&width=200&height=200" style=border-radius:20px;></center>
+        <br><br>
+        <h2>my socials</h2>
+        <div class="socialscontainer">
+        <div class="social"><a href="https://www.youtube.com/@notxabee"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" style=max-width:100%></a></div>
+        <div class="social"><a href="https://github.com/notxabee"><img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" style=max-width:100%></a></div>
+        <div class="social"><a href="https://www.reddit.com/user/notxabee/"><img src="https://cdn-icons-png.flaticon.com/512/52/52053.png" style=max-width:100%;filter:invert(100%);></a></div>
+        <div class="social"><a href="https://www.twitch.tv/notxabee"><img src="https://www.svgrepo.com/show/327402/logo-twitch.svg" style=max-width:100%;filter:invert(100%);></a></div>
+        </div>
+        </div>
+        <div id="about" style=display:none;>
+        <h1>About Me</h1>
         <br>
+        <p>i'm bee. i like doing things.</p>
+        </div>
+        <div id="mystuff" style=display:none;>
+        <h1>My Stuff</h1>
         <br>
-        <h2>Browse My Beeses:</h2>
-        <br>
-        <div class="flex-container">
-        <div class="item"><a href="https://www.youtube.com/@notxabee"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" style=max-width:100%></a></div>
-        <div class="item"><a href="https://github.com/notxabee"><img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" style=max-width:100%></a></div>
-        <div class="item"><a href="https://www.reddit.com/user/notxabee/"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_reddit-512.png" style=max-width:100%></a></div>
+        <p>haven't made anything cool yet...</p>
+        <p>check back later</p>
         </div>
         </body>
+        <script>
+function showPage(pageId) {
+  // Hide all sections first
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('about').style.display = 'none';
+document.getElementById('mystuff').style.display = 'none';
+  
+  // Show the requested section
+  document.getElementById(pageId).style.display = 'block';
+}
+        </script>
     </html>
